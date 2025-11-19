@@ -68,8 +68,28 @@
       font-size: 14px;
       color: #444;
     }
-  .highlight-cells td:nth-child(2) { font-weight:bold; font-style:italic; color:#c2185b; color:#cc3333; background:#fff0f8; }
+    .toggle-btn {
+      margin-top: 10px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: none;
+      background: #cc6666;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .toggle-btn:hover {
+      background: #b25555;
+    }
+    .schedule-details {
+      margin-top: 15px;
+    }
+  .highlight-cells td:nth-child(2) { font-weight:normal; font-style:italic; color:#cc3333; background:#fff0f8; }
 .song-highlight td { font-weight:bold; color:#2b7a0b; background:#e9ffe9; font-style:italic; }
+.highlight-cells tr:nth-child(2) td { background:#fff9e6; border:2px solid #f2d27a; font-size:17px; font-weight:bold; padding:16px; line-height:1.6; box-shadow:0 0 8px rgba(242,210,122,0.5); border-radius:6px; }
+.highlight-cells .verse-block { background:#fff7e6; padding:18px; line-height:1.7; font-size:17px; border-radius:10px; box-shadow:0 0 10px rgba(255,200,120,0.45); }
+.highlight-cells .goodnews-block { background:#f3e8ff; padding:18px; line-height:1.7; font-size:17px; border-radius:10px; box-shadow:0 0 10px rgba(180,140,255,0.35); }
 </style>
 <style>
     </style>
@@ -87,26 +107,63 @@
     <p><strong>Carol Stop 1 – Hepshiba Family</strong></p>
     <p><strong>Carol Time:</strong> Nov 22, 16:15 – 16:30</p>
 
-    <table class="song-highlight"><tr><th colspan="2">Song 1</th></tr>
-      <tr><td colspan="2" style="text-align:center;">கேள் ஜென்மித்த ராயர்க்கே</td></tr>
+    <button class="toggle-btn" onclick="toggleSchedule(this, 'stop1')">Show schedule</button>
+
+    <div id="stop1" class="schedule-details" style="display:none;">
+
+    <table class="song-highlight"><tr><th colspan="2">Song 1 – கேள் ஜென்மித்த ராயர்க்கே</th></tr>
+      <tr><td colspan="2" style="text-align:center; white-space:pre-line;">கேள் ஜென்மித்த ராயர்க்கே
+விண்ணில் துத்தியம் ஏறுதே
+அவர் பாவ நாசகர்
+சமாதான காரணர்
+மண்ணோர் யாரும் எழுந்து
+விண்ணோர் போல் கெம்பீரித்து
+பெத்லேகேமில் கூடுங்கள்
+ஜென்ம செய்தி கூறுங்கள்
+
+கேள் ஜென்மித்த ராயர்க்கே
+விண்ணில் துத்தியம் ஏறுதே</td></tr>
     </table>
 
     <table class="highlight-cells">
       <tr><th colspan="2">Bible Verse</th></tr>
-      <tr><td>Verse Reference</td><td>Verse Reference</td></tr>
       <tr><td>Reader</td><td>Sam Jebadoss</td></tr>
-      <tr><td>Language</td><td>English</td></tr>
+      <tr><td colspan="2" class="verse-block">“For unto us a Child is born, Unto us a Son is given; And the government will be upon His shoulder. And His name will be called Wonderful, Counselor, Mighty God, Everlasting Father, Prince of Peace.”<br><em>Isaiah 9:6</em></td></tr>
     </table>
 
     <table class="highlight-cells">
       <tr><th colspan="2">Good News</th></tr>
-      
       <tr><td>Reader</td><td>Edwin Rajakumar</td></tr>
-      <tr><td>Language</td><td>English</td></tr>
+      <tr><td colspan="2" class="goodnews-block" style="white-space:pre-line; text-align:left;">
+During this season, the world celebrates Christmas with bright lights, decorations, music, shopping, and the giving of gifts. Everywhere, there’s excitement and joy in the air.
+
+But beyond all these things, we remember the true reason for this day — the birth of Jesus, who came to bring peace, love, and hope to our world. His coming is the Good News that reminds us God is with us, and we are never alone.
+
+The Bible calls Jesus Immanuel, which means “God with us.” That name tells us something powerful — that God didn’t stay far away in heaven, but came down to be with us, to walk among us, to understand our struggles, and to give us hope.
+
+Jesus is near. When we feel lost, He is the light in our darkness. When our hearts are heavy, His love gives us strength. And when the world feels uncertain, His presence reminds us that hope never fades.
+
+This Christmas, may your hearts be filled with His peace and His love.
+Merry Christmas!
+      </td></tr>
     </table>
 
     <table class="song-highlight"><tr><th colspan="2">Song 2</th></tr>
-      <tr><td colspan="2" style="text-align:center;">Joy to the world!</td></tr>
+      <tr><td colspan="2" style="text-align:center; white-space:pre-line;">Joy to the world!
+The Lord is come
+Let earth receive her King
+Let every heart prepare Him room
+And heaven and nature sing
+And heaven and nature sing
+And heaven, and heaven and nature sing
+
+Joy to the Earth! The Saviour reigns
+Let men their songs employ
+While fields and floods, rocks, hills and plains
+Repeat the sounding joy
+Repeat the sounding joy
+Repeat, repeat the sounding joy
+Repeat, repeat the sounding joy.</td></tr>
     </table>
 
     <table class="highlight-cells">
@@ -116,14 +173,49 @@
     </table>
 
     <table class="song-highlight"><tr><th colspan="2">Song 3</th></tr>
-      <tr><td colspan="2" style="text-align:center;">Jingle Bells</td></tr>
-      <tr><td colspan="2" style="text-align:center;">We Wish You a Merry Christmas</td></tr>
-    </table>
+      <tr><td colspan="2" style="text-align:center; white-space:pre-line;">We wish you a merry Christmas
+We wish you a merry Christmas
+We wish you a merry Christmas
+We wish you a merry Christmas
+And a happy new year
+We wish you a merry Christmas
+We wish you a merry Christmas
+We wish you a merry Christmas
+And a happy new year
+Good tidings we bring to you and your kin
+Good tidings for Christmas and a happy new year</td></tr>
+      <tr><td colspan="2" style="text-align:center; white-space:pre-line;">Jingle Bells, Jingle Bells
+Jingle Bells, Jingle Bells
+Jingle all the way
+Oh what fun it is to ride in a
+One horse open sleigh
+Jingle bells, Jingle Bells
+Jingle all the way
+Oh what fun it is to ride in a one
+Horse open sleigh
+Dashing through the snow
+In a one-horse open sleigh
+Over the hills we go
+Laughing all the way
+Bells on Bobtails ring
+Making spirits bright
+What fun it is to ride and sing
+A sleighing song tonight
+Jingle bells…</td></tr>
+</table>
+
+    </div>
+  </div>
+
   </div>
 
   <div class="card">
     <p><strong>Carol Stop 2 – John Family</strong></p>
     <p><strong>Carol Time:</strong> Nov 22, 17:00 – 17:15</p>
+
+    <button class="toggle-btn" onclick="toggleSchedule(this, 'stop2')">Show schedule</button>
+
+    <div id="stop2" class="schedule-details" style="display:none;">
 
     <table class="song-highlight"><tr><th colspan="2">Song 1</th></tr>
       <tr><td colspan="2" style="text-align:center;">Angels we have heard on high</td></tr>
@@ -131,15 +223,14 @@
 
     <table class="highlight-cells">
       <tr><th colspan="2">Bible Verse</th></tr>
-      <tr><td>Verse Reference</td><td>Verse Reference</td></tr>
+      <tr><td colspan="2">“தேவதூதன் அவளை நோக்கி: மரியாளே, பயப்படாதே; நீ தேவனிடத்தில் கிருபைபெற்றாய். இதோ, நீ கர்ப்பவதியாகி ஒருகுமாரனைப் பெறுவாய்; அவருக்கு இயேசு என்று பேரிடுவாயாக. அவர் பெரியவராயிருப்பார், உன்னதமானவருடைய குமாரன் என்னப்படுவார்; கர்த்தராகிய தேவன் அவருடைய பிதாவாகிய தாவீதின் சிங்காசனத்தை அவருக்குக் கொடுப்பார். அவர் யாக்கோபின் குடும்பத்தாரை என்றென்றைக்கும் அரசாளுவார்; அவருடைய ராஜ்யத்துக்கு முடிவிராது.”<br><em>லூக்கா 1:30–33</em></td></tr>
       <tr><td>Reader</td><td>Paulraj</td></tr>
-      <tr><td>Language</td><td>Tamil</td></tr>
     </table>
 
     <table class="highlight-cells">
       <tr><th colspan="2">Good News</th></tr>
       <tr><td>Reader</td><td>Carolin Johnson</td></tr>
-      <tr><td>Language</td><td>Tamil or English </td></tr>
+      <tr><td>Language</td><td>Tamil or English</td></tr>
     </table>
 
     <table class="song-highlight"><tr><th colspan="2">Song 2</th></tr>
@@ -156,26 +247,47 @@
       <tr><td colspan="2" style="text-align:center;">Jingle Bells</td></tr>
       <tr><td colspan="2" style="text-align:center;">We Wish You a Merry Christmas</td></tr>
     </table>
+
+    </div>
   </div>
 
-  <div class="footer">🎄 Made with love for Christmas Carols 2025 🎄</div>
+<div class="footer">🎄 Made with love for Christmas Carols 2025 🎄</div>
 
 <div class="snow"></div>
 <script>
-  const snowContainer = document.createElement('div');
-  snowContainer.className = 'snow-container';
-  document.body.appendChild(snowContainer);
-
-  for (let i = 0; i < 60; i++) {
-    const snowflake = document.createElement('div');
-    snowflake.className = 'snowflake';
-    snowflake.style.left = Math.random() * 100 + 'vw';
-    snowflake.style.animationDuration = 3 + Math.random() * 5 + 's';
-    snowflake.style.opacity = Math.random();
-    snowflake.style.fontSize = 8 + Math.random() * 10 + 'px';
-    snowflake.innerHTML = '❄';
-    snowContainer.appendChild(snowflake);
+  function toggleSchedule(button, id) {
+    const section = document.getElementById(id);
+    if (!section) return;
+    const isHidden = section.style.display === 'none' || section.style.display === '';
+    section.style.display = isHidden ? 'block' : 'none';
+    button.textContent = isHidden ? 'Hide schedule' : 'Show schedule';
   }
+</script>
+<script>
+  // Snow only on first load
+  window.addEventListener('load', () => {
+    const snowContainer = document.createElement('div');
+    snowContainer.className = 'snow-container';
+    document.body.appendChild(snowContainer);
+
+    for (let i = 0; i < 60; i++) {
+      const snowflake = document.createElement('div');
+      snowflake.className = 'snowflake';
+      snowflake.style.left = Math.random() * 100 + 'vw';
+      snowflake.style.animationDuration = 3 + Math.random() * 5 + 's';
+      snowflake.style.opacity = Math.random();
+      snowflake.style.fontSize = 8 + Math.random() * 10 + 'px';
+      snowflake.innerHTML = '❄';
+      snowContainer.appendChild(snowflake);
+    }
+
+    // Fade out snow smoothly after 6 seconds
+    setTimeout(() => {
+      snowContainer.style.transition = 'opacity 2.5s ease';
+      snowContainer.style.opacity = '0';
+      setTimeout(() => snowContainer.remove(), 2500);
+    }, 6000);
+  });
 </script>
 <style>
   .snow-container {
